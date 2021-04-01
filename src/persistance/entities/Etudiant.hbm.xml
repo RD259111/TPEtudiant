@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 1 avr. 2021 15:29:54 by Hibernate Tools 5.4.14.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="persistance.entities.Etudiant" optimistic-lock="version" polymorphism="implicit" schema="SYSTEM" select-before-update="false" table="ETUDIANT">
+        <id name="code" type="integer">
+            <column name="CODE" precision="22" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="nom" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="NOM"/>
+        </property>
+        <property generated="never" lazy="false" name="moyenne" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="MOYENNE" precision="126" scale="0"/>
+        </property>
+    </class>
+</hibernate-mapping>

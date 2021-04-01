@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import tpEtudiant.Etudiant;
+import tpEtudiant.EtudiantJavaBean;
 
 /**
  * Servlet implementation class servletpage
@@ -34,29 +34,30 @@ public class servletpage extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String code = request.getParameter("code");
-		String nom = request.getParameter("nom");
-		String moyenne = request.getParameter("moyenne");
+		// String nom = request.getParameter("nom");
+		// String moyenne = request.getParameter("moyenne");
 
-		float m = Integer.parseInt(moyenne);
+		// float m = Integer.parseInt(moyenne);
 		int c = Integer.parseInt(code);
 
-		Etudiant etudiant = new Etudiant();
+		EtudiantJavaBean etudiant = new EtudiantJavaBean();
 
 		response.setContentType("text/plain");
 
 		PrintWriter out = response.getWriter();
 
 		etudiant.setCode(c);
-		etudiant.setMoyenne(m);
-		etudiant.setNom(nom);
+
+		// etudiant.setMoyenne(m);
+		// etudiant.setNom(nom);
 
 		out.print(etudiant.getCode() + "  :  ");
 		out.print(etudiant.getNom() + "  :  ");
 
-		if (m < 10)
-			out.println("Vous n'avez pas la moyenne");
+		if (etudiant.isAdmis())
+			out.println("Vous êtes admis");
 		else {
-			out.println("Félicitation, vous avez la moyenne");
+			out.println("Vous n'êtes pas admis");
 
 		}
 
